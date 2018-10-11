@@ -1,8 +1,9 @@
 import wepy from 'wepy'
 /**
- * Http 请求
+ * Http Request util
  *
  * @class http
+ * @author xuyao
  */
 class http {
   /**
@@ -21,6 +22,15 @@ class http {
     }
   }
 
+  /**
+   * HTTP Request
+   *
+   * @param {*} apiModule 请求模块
+   * @param {*} apiMethod 请求方法
+   * @param {*} params 请求参数(可选填)
+   * @returns Promise
+   * @memberof http
+   */
   auto (apiModule, apiMethod, params) {
     let requestAPI = this.getRequestAPI(apiModule, apiMethod, params)
     if (requestAPI == null) {
@@ -49,14 +59,23 @@ class http {
       })
     })
   }
-
+  
+  /**
+   * Get RESTful API Info By apiModule and apiMethod
+   *
+   * @param {*} apiModule 请求模块
+   * @param {*} apiMethod 请求方法
+   * @param {*} params 请求参数(可选填)
+   * @returns
+   * @memberof http
+   */
   getRequestAPI (apiModule, apiMethod, params) {
     let requestAPI = this._apiConfig[apiModule][apiMethod]
     if (requestAPI == null) {
       console.error(`HTTP Auto: Can not find the config by apiModule and apiMethod. You can check the service-api.config.js file.`)
       return null
     }
-    requestAPI.url = this._domainName + this.replaceUrlParams(requestAPI.url, params)
+    requestAPI.url = this._domainName + this._replaceUrlParams(requestAPI.url, params)
     return requestAPI
   }
 
@@ -68,7 +87,7 @@ class http {
    * @param {any} params object
    * @returns string
    */
-  replaceUrlParams (url, params) {
+  _replaceUrlParams (url, params) {
     if (params && params.data) {
       let data = params.data
       if (typeof url === 'string') {
