@@ -44,14 +44,8 @@ class http {
         method: requestAPI.method
       }).then(res => {
         if (res && res.data && res.data.status == 200) {
-          // 200: 服务端业务处理正常结束
           resolve(res.data)
         } else {
-          // 其它错误，提示用户错误信息
-          if (this._errorHandler != null) {
-            // 如果有统一的异常处理，就先调用统一异常处理函数对异常进行处理
-            this._errorHandler(res)
-          }
           reject(res)
         }
       }).catch(res => {
