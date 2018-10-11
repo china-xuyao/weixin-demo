@@ -60,7 +60,7 @@ export default class extends wepy.app {
     this.use('requestfix')
     this.use('promisify')
   }
-
+  // Http request instance
   http = new Http('https://848160158.xuyao100.com', resufulApi)
 }
 </script>
