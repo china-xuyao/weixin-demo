@@ -1,10 +1,13 @@
 {
-	"miniprogramRoot": "./client",
-	"qcloudRoot": "./server",
-	"setting": {
-		"newFeature": true
-	},
-	"appid": "wx7419cd9afdd69985",
-	"projectname": "demo",
-	"condition": {}
+  "description": "demo",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "appid": "wx7419cd9afdd69985",
+  "projectname": "demo",
+  "miniprogramRoot": "./dist"
 }
