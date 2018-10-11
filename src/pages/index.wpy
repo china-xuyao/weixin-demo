@@ -32,7 +32,9 @@
       <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover" />
       <view class="userinfo-nickname">{{ userInfo.nickName }}</view>
     </view>
+  
 
+    <button class="weui-btn  weui-btn_mini" type="primary">页面主操作 Normal</button>
     <panel>
       <view class="title" slot="title">测试数据绑定</view>
       <text class="info">{{normalTitle}}</text>
@@ -83,7 +85,6 @@
       <list></list>
     </panel>
 
-    <toast />
   </view>
 </template>
 
@@ -218,10 +219,9 @@ export default class Index extends wepy.page {
 
   onLoad () {
     let vm = this
-    wepy.request('https://848160158.xuyao100.com/api/user').then((d) => {
-      console.log(d)
-      vm.requestUserInfo = d.data.data[0].name
-      console.log(vm.requestUserInfo)
+    vm.$parent.http.auto('userInfo', 'getAll').then(res => {
+      console.log('555555555555555555')
+      console.log(res)
     })
   }
 }

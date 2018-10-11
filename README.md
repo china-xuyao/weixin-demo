@@ -29,6 +29,10 @@
 ### 小程序开发文档
 	http://mp.weixin.qq.com/debug/wxadoc/dev/
 
+### 小程序WEUI
+        https://github.com/wepyjs/wepy-weui-demo
+
+
 ### 演示地址
 
 打开微信扫一扫
