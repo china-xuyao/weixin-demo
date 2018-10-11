@@ -31,10 +31,3 @@
 
 ### 小程序WEUI
         https://github.com/wepyjs/wepy-weui-demo
-
-
-### 演示地址
-
-打开微信扫一扫
-
-<img src="https://github.com/dyq086/wxYuHanStore/blob/master/screenshots/qr.jpg" width="200" height="200"/> 
