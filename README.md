@@ -1,5 +1,5 @@
 ### 安装（更新） wepy 命令行工具。
-	npm install wepy-cli -g
+	npm install wepy-cli -g // version: 1.7.3
 
 ### 安装依赖包
 	npm install
@@ -8,7 +8,7 @@
 	npm run dev
 
 ### 生产压缩
-	npm run build //上传代码时，请先执行此命令，否则会提示包体积过大
+	npm run build // 上传代码时，请先执行此命令，否则会提示包体积过大
 
 
 ### 开发使用说明(重要)
@@ -30,4 +30,4 @@
 	http://mp.weixin.qq.com/debug/wxadoc/dev/
 
 ### 小程序WEUI
-        https://github.com/wepyjs/wepy-weui-demo
+	https://github.com/wepyjs/wepy-weui-demo
