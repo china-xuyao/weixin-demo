@@ -64,6 +64,10 @@ class http {
    * @memberof http
    */
   getRequestAPI (apiModule, apiMethod, params) {
+    if (this._apiConfig == null) {
+      console.error(`HTTP Auto: The appConfig is 'null'.`)
+      return null
+    }
     let requestAPI = this._apiConfig[apiModule][apiMethod]
     if (requestAPI == null) {
       console.error(`HTTP Auto: Can not find the config by apiModule and apiMethod. You can check the service-api.config.js file.`)
