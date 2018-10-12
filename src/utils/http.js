@@ -43,7 +43,7 @@ class http {
         header: Object.assign(this._header, params ? params.header : null),
         method: requestAPI.method
       }).then(res => {
-        if (res && res.data && res.data.status == 200) {
+        if (res && res.data && res.data.status + '' === '200') {
           resolve(res.data)
         } else {
           reject(res)
@@ -53,7 +53,7 @@ class http {
       })
     })
   }
-  
+
   /**
    * Get RESTful API Info By apiModule and apiMethod
    *
@@ -72,7 +72,6 @@ class http {
     requestAPI.url = this._domainName + this._replaceUrlParams(requestAPI.url, params)
     return requestAPI
   }
-
 
   /**
    * Replace Url Params
